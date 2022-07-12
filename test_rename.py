@@ -5,4 +5,4 @@ def test_add():
 def test_add2():
     assert calculator.add(3,9) == 12
 def test_add3():
-    assert calculator.add(1,2) == 3
+    assert calculator.add(1,2) == 0, "3 is not equal 0"
