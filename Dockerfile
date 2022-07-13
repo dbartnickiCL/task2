@@ -1,15 +1,15 @@
-FROM python:3.8-slim-buster
 
-WORKDIR /app
 
-RUN pip3 install pytest
+FROM ubuntu:14.04
 
-RUN pip3 install mypy
+RUN set -x \
+    && pythonVersions='python2.6 python2.7 python3.1 python3.2 python3.3 python3.4 python3.5' \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends software-properties-common \
+    && apt-add-repository -y ppa:fkrull/deadsnakes \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends $pythonVersions \
+    && apt-get purge -y --auto-remove software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY . .
-
-ADD script.sh /
-
-RUN chmod +x /script.sh
-
-CMD ["/script.sh"]
+CMD bash
