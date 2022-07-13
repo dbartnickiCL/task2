@@ -8,6 +8,8 @@ RUN pip3 install mypy
 
 COPY . .
 
-RUN pytest
+ADD script.sh /
 
-RUN mypy -V
+RUN chmod +x script.sh
+
+CMD ["script.sh"]
