@@ -9,3 +9,5 @@ RUN pip3 install mypy
 COPY . .
 
 RUN pytest
+
+RUN mypy -V
