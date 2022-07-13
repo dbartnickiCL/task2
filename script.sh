@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pytest 
-mypy -V 
+mypy -V
