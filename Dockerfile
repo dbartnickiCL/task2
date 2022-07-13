@@ -1,5 +1,5 @@
-FROM python:3.9 
+FROM python:3.8-slim-buster
 WORKDIR /app
-COPY . . 
 RUN pip install pytest 
-CMD [ "python3", "-m", "pytest" ]
+COPY . . 
+CMD [ "pytest" ]
