@@ -8,4 +8,4 @@ RUN pip3 install mypy
 
 COPY . .
 
-CMD "mypy -v"
+CMD "mypy" "--version"
