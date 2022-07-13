@@ -1,0 +1,14 @@
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+RUN pip3 install pytest
+
+RUN pip3 install mypy
+
+COPY . .
+
+COPY pytest pytest
+COPY mypy mypy
+COPY run_2cmd.sh run_2cmd.sh
+CMD ./run_2cmd.sh
