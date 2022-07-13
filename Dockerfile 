@@ -8,6 +8,8 @@ RUN pip3 install mypy
 
 COPY . .
 
+COPY script.sh /scripts
+
 RUN chmod +x script.sh
 
 CMD "./script.sh"
