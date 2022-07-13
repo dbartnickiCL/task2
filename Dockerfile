@@ -2,6 +2,8 @@
 
 FROM ubuntu:14.04
 
+COPY . .
+
 RUN set -x \
     && pythonVersions='python2.6 python2.7 python3.1 python3.2 python3.3 python3.4 python3.5' \
     && apt-get update \
